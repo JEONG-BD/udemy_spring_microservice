@@ -8,6 +8,7 @@
 <!--        <module>order-service</module>-->
 
         <module>order-service</module>
+        <module>common</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -55,6 +56,16 @@
             <artifactId>order-messaging</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.food.ordering.system</groupId>
+            <artifactId>order-messaging</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.food.ordering.system</groupId>
+            <artifactId>common-domain</artifactId>
+            <version>${project.version}</version> b
+        </dependency>
     </dependencies>
     </dependencyManagement>
 
@@ -64,10 +75,7 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-        </dependency>
+
     </dependencies>
     <build>
         <plugins>
