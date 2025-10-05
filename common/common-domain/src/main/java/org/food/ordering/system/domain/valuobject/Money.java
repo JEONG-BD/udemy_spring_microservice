@@ -15,20 +15,20 @@ public class Money  {
         return amount;
     }
 
-    public boolean isGreaterZero(){
+    public boolean isGreaterThanZero(){
+
         return this.amount != null && this.amount.compareTo(BigDecimal.ZERO) > 0;
     }
 
     public boolean isGreaterThan(Money money){
         return this.amount != null && this.amount.compareTo(money.getAmount()) > 0;
-
     }
 
     public Money add(Money money){
         return new Money(setScale(this.amount.add(money.getAmount())));
     }
 
-    public Money substract(Money money){
+    public Money subtract(Money money){
         return new Money(setScale(this.amount.subtract(money.getAmount())));
     }
 
