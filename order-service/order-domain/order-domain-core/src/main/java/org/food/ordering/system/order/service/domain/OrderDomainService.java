@@ -14,5 +14,5 @@ public interface OrderDomainService {
     void approveOrder(Order order);
     OrderCancelledEvent cancelOrderPayment(Order order, List<String> failureMessage);
     void cancelOrder(Order order, List<String> failureMessage);
-    
+
 }
