@@ -62,10 +62,11 @@ public class OrderDataMapper {
                 address.getCity());
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order){
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message){
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .message(message)
                 .build();
     }
 
@@ -76,4 +77,6 @@ public class OrderDataMapper {
                 .failureMessage(order.getFailureMessage())
                 .build();
     }
+
+
 }
