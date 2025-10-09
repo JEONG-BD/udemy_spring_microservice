@@ -7,11 +7,13 @@ import org.food.ordering.system.domain.valuobject.RestaurantId;
 import org.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import org.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import org.food.ordering.system.order.service.domain.dto.create.OrderAddress;
+import org.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
 import org.food.ordering.system.order.service.domain.entity.Order;
 import org.food.ordering.system.order.service.domain.entity.OrderItem;
 import org.food.ordering.system.order.service.domain.entity.Product;
 import org.food.ordering.system.order.service.domain.entity.Restaurant;
 import org.food.ordering.system.order.service.domain.valueofobject.StreetAddress;
+import org.food.ordering.system.order.service.domain.valueofobject.TrackingId;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
@@ -64,6 +66,14 @@ public class OrderDataMapper {
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order){
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessage(order.getFailureMessage())
                 .build();
     }
 }
