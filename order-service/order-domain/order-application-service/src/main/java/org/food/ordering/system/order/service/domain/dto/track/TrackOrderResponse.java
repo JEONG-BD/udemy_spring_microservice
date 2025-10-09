@@ -11,6 +11,7 @@ import java.util.UUID;
 
 @Getter
 @AllArgsConstructor
+@Builder
 public class TrackOrderResponse {
 
     @NotNull
