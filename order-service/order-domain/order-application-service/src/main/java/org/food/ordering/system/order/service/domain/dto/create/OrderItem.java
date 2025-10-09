@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class OrderItem {
     @NotNull
-    private final Integer quanitity;
+    private final Integer quantity;
     @NotNull
     private final UUID productId;
     @NotNull
