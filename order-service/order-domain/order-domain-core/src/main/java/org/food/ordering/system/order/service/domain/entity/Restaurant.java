@@ -7,12 +7,12 @@ import java.util.List;
 
 public class Restaurant extends AggregateRoot<RestaurantId> {
     private final List<Product> products;
-    private boolean activate;
+    private boolean active;
 
     private Restaurant(Builder builder) {
         super.setId(builder.restaurantId);
         products = builder.products;
-        activate = builder.activate;
+        active = builder.active;
     }
 
     public static Builder builder(){
@@ -24,19 +24,19 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         return products;
     }
 
-    public boolean isActivate() {
-        return activate;
+    public boolean isActive() {
+        return active;
     }
 
     public static final class Builder {
         private RestaurantId restaurantId;
         private List<Product> products;
-        private boolean activate;
+        private boolean active;
 
         private Builder() {
         }
 
-        public static Builder newBuilder() {
+        public static Builder builder() {
             return new Builder();
         }
 
@@ -50,8 +50,8 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
             return this;
         }
 
-        public Builder activate(boolean val) {
-            activate = val;
+        public Builder active(boolean val) {
+            active = val;
             return this;
         }
 
