@@ -1,10 +1,12 @@
 package org.food.ordering.system.order.service.domain.entity;
 
+import lombok.ToString;
 import org.food.ordering.system.domain.entity.AggregateRoot;
 import org.food.ordering.system.domain.valuobject.RestaurantId;
 
 import java.util.List;
 
+@ToString
 public class Restaurant extends AggregateRoot<RestaurantId> {
     private final List<Product> products;
     private boolean active;
@@ -34,10 +36,6 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         private boolean active;
 
         private Builder() {
-        }
-
-        public static Builder builder() {
-            return new Builder();
         }
 
         public Builder restaurantId(RestaurantId val) {
